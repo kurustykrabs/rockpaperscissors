@@ -1,5 +1,17 @@
 <h2>Throw your choice and see if you can beat me!</h2>
+
+<p>Round: <%= @rounds %></p>
+<p>Computer choice: <%= @computer_answer %></p>
+<p>Result: <%= @result %></p>
+
   <p> Select your option</p>
+
+  <a href='game/throw/rock'>
     <button type = "button" name = "button">Rock</button>
+  </a>
+  <a href='game/throw/paper'>
     <button type = "button" name = "button">Paper</button>
+  </a>
+  <a href='game/throw/scissors'>
     <button type = "button" name = "button">Scissors</button>
+  </a>
