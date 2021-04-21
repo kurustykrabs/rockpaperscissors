@@ -14,23 +14,30 @@ class RockPaperScissors < Sinatra::Base
     erb :rounds
   end
 
-  get '/game' do
-    erb :game
+  get '/menu' do
+    erb :menu
   end
 
   post '/rounds' do
+    @player_name = session['player_name']
     session['rounds'] = params[:rounds]
     @rounds = params['rounds']
     erb :menu
   end
 
+  get '/game' do
+    @count = session['rounds']
+    session['count'] = session['rounds'].to_i
+    erb :game
+  end
+
   get '/game/throw/:player_choice' do
-    session['count'] = 0
+
     options = ['Rock','Paper','Scissors']
     computer_choice = rand(options.length)
     player_choice = params[:player_choice]
     @computer_answer = options[computer_choice]
-    session['count'] += 1
+    session['count'] -= 1
 
     @count = session['count']
     @rounds = session['rounds'].to_i
