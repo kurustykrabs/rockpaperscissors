@@ -2,7 +2,7 @@ require 'sinatra'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
+enable :sessions
 
   get '/' do
     erb :homepage
@@ -35,7 +35,6 @@ class RockPaperScissors < Sinatra::Base
       session['leaderboard'] = session['leaderboard']
     else
       session['leaderboard'] = Hash.new
-    # test = {}
     end
 
       erb :game
@@ -47,6 +46,7 @@ class RockPaperScissors < Sinatra::Base
     computer_choice = rand(options.length)
     player_choice = params[:player_choice]
     @computer_answer = options[computer_choice]
+
     session['count'] -= 1
     @count = session['count']
     @rounds = session['rounds'].to_i
@@ -105,4 +105,8 @@ class RockPaperScissors < Sinatra::Base
 
     erb :leaderboard
   end
+
+    # get '/new' do
+    # clear sessions
+
 end
