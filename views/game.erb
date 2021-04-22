@@ -1,17 +1,26 @@
 <h2>Throw your choice and see if you can beat me!</h2>
 
-<p>Round: <%= @count %></p>
+<p>Rounds remaining left: <%= @count %></p>
 <p>Computer choice: <%= @computer_answer %></p>
 <p>Result: <%= @result %></p>
 
-  <p> Select your option</p>
+<p> Select your option</p>
 
-  <a href='/game/throw/Rock'>
-    <button type = "button" name = "button">Rock</button>
-  </a>
-  <a href='/game/throw/Paper'>
-    <button type = "button" name = "button">Paper</button>
-  </a>
-  <a href='/game/throw/Scissors'>
-    <button type = "button" name = "button">Scissors</button>
-  </a>
+    <% if @count == 0 %>
+    <p>Oh no you ran out of chances.</p>
+    <a href='/view_results'>
+      <button type = "button" name = "button">View results</button>
+    </a>
+
+    <% else %>
+    <a href='/game/throw/Rock'>
+      <button type = "button" name = "button">Rock</button>
+    </a>
+    <a href='/game/throw/Paper'>
+      <button type = "button" name = "button">Paper</button>
+    </a>
+    <a href='/game/throw/Scissors'>
+      <button type = "button" name = "button">Scissors</button>
+    </a>
+
+    <% end %>
