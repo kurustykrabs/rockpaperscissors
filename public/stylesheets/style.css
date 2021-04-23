@@ -1,4 +1,7 @@
 body {
+   margin: auto;
+   width: 50%;
+   text-align: center;
 	 height: 100vh;
 	 overflow: hidden;
 	/* background: radial-gradient(circle at bottom, #fff -30%, transparent 70%), linear-gradient(to right, #134a8e, #00b6f1 50%), #fff;
@@ -40,7 +43,3 @@ table, th, td, p {
   th, td {
     padding: 7px;
   }
-
-form {
-  display: inline-block;
-}
