@@ -106,7 +106,11 @@ enable :sessions
     erb :leaderboard
   end
 
-    # get '/new' do
-    # clear sessions
+  get '/new' do
+    session.clear
+    redirect '/'
+
+    erb :new
+  end
 
 end
