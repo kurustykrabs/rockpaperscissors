@@ -1,20 +1,8 @@
 <h1>The Hall of Champions</h1>
 
-<% @leaderboard.each do |key, value| %>
 
-<head>
-  <style>
-  table, th, td, p {
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align:center
-  }
-    th, td {
-      padding: 7px;
-    }
-  </style>
-    </head>
-    <body>
+
+
     <table style="width:50%">
 
       <tr>
@@ -26,16 +14,18 @@
         <th>Lose</th>
         <th>Tie</th>
       </tr>
+
+      <% @leaderboard.each do |key, value| %>
       <tr>
         <td><%= key %></td>
         <td><%= value.count ('Win') %></td>
         <td><%= value.count ('Lose') %></td>
         <td><%= value.count ('Tie') %></td>
       </tr>
+      <% end %>
     </table>
-    </body>
 
-<% end %>
+
 
 <h2>What do you wanna do now?</h2>
 
